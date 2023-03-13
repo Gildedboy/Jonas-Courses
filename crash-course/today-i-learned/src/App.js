@@ -237,7 +237,7 @@ function Fact({ fact, setFacts }) {
   return (
     <li className="fact">
       <p>
-        {isDisputed ? <span class="disputed">⛔️ [DISPUTED] </span> : null}
+        {isDisputed ? <span className="disputed">⛔️ [DISPUTED] </span> : null}
         {fact.text}
         <a
           target="_blank"
