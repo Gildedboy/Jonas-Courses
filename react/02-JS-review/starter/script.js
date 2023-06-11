@@ -4,14 +4,7 @@ const data = [
     title: "The Lord of the Rings",
     publicationDate: "1954-07-29",
     author: "J. R. R. Tolkien",
-    genres: [
-      "fantasy",
-      "high-fantasy",
-      "adventure",
-      "fiction",
-      "novels",
-      "literature",
-    ],
+    genres: ["fantasy", "high-fantasy", "adventure", "fiction", "novels", "literature"],
     hasMovieAdaptation: true,
     pages: 1216,
     translations: {
@@ -37,13 +30,7 @@ const data = [
     title: "The Cyberiad",
     publicationDate: "1965-01-01",
     author: "Stanislaw Lem",
-    genres: [
-      "science fiction",
-      "humor",
-      "speculative fiction",
-      "short stories",
-      "fantasy",
-    ],
+    genres: ["science fiction", "humor", "speculative fiction", "short stories", "fantasy"],
     hasMovieAdaptation: false,
     pages: 295,
     translations: {},
@@ -142,3 +129,22 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+// Destructuring es obtener valores de un array
+
+const book = getBook(2);
+book;
+
+// const title = book.title;
+// const author = book.author;
+
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } = book;
+
+console.log(author, title, genres);
+
+// const primaryGenre = genres[0];
+// const secondaryGenre = genres[1];
+
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+
+console.log(primaryGenre, secondaryGenre, otherGenres);
